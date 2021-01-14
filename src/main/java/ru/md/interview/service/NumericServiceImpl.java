@@ -9,10 +9,6 @@ import java.util.Map;
 
 @Service
 public class NumericServiceImpl implements NumericService {
-    @Override
-    public Map<Integer, Integer> getMapValues() {
-        return null;
-    }
 
     @Override
     public Map<Integer, Integer> getCountByKeys(List<Integer> values) {
@@ -37,8 +33,4 @@ public class NumericServiceImpl implements NumericService {
         return true;
     }
 
-    @Override
-    public Integer getById(Integer id) {
-        return null;//mapValues.get(id);
-    }
 }

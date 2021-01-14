@@ -33,8 +33,4 @@ public class NumericsController {
         return ResponseEntity.ok(numericService.getCountByKeys(values));
     }
 
-//    @GetMapping("/{id}")
-//    public Integer show(@PathVariable String id) {
-//        return numericService.getById(id);
-//    }
 }
