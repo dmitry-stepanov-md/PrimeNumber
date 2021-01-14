@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/numerics")
+@RequestMapping("/prime-number")
 public class PrimeNumbersController {
 
     private final PrimeNumberService primeNumberService;
