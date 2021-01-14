@@ -3,19 +3,19 @@ package ru.md.interview.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.md.interview.service.NumericService;
+import ru.md.interview.service.PrimeNumberService;
 
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/numerics")
-public class NumericsController {
+public class PrimeNumbersController {
 
-    private final NumericService numericService;
+    private final PrimeNumberService primeNumberService;
 
-    public NumericsController(NumericService numericService) {
-        this.numericService = numericService;
+    public PrimeNumbersController(PrimeNumberService primeNumberService) {
+        this.primeNumberService = primeNumberService;
     }
 
     @GetMapping()
@@ -30,7 +30,7 @@ public class NumericsController {
         if (values == null) {
             return new ResponseEntity("Empty array", HttpStatus.NOT_ACCEPTABLE);
         }
-        return ResponseEntity.ok(numericService.getCountByKeys(values));
+        return ResponseEntity.ok(primeNumberService.getCountByKeys(values));
     }
 
 }

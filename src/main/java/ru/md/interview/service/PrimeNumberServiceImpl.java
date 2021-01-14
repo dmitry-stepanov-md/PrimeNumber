@@ -8,7 +8,7 @@ import java.util.Map;
 
 
 @Service
-public class NumericServiceImpl implements NumericService {
+public class PrimeNumberServiceImpl implements PrimeNumberService {
 
     @Override
     public Map<Integer, Integer> getCountByKeys(List<Integer> values) {
