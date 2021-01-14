@@ -9,17 +9,26 @@ import java.util.Map;
 
 @Service
 public class PrimeNumberServiceImpl implements PrimeNumberService {
-
+    private Map<Integer, Integer> mapValues;
     @Override
     public Map<Integer, Integer> getCountByKeys(List<Integer> values) {
-        Map<Integer, Integer> mapValues = new HashMap<>();
+
+        mapValues = new HashMap<>();
 
         for (Integer key : values) {
+            if (isExists(key)) {
+                mapValues.put(key, mapValues.get(key) + 1);
+                continue;
+            }
             if (isPrime(key))
-                mapValues.put(key, mapValues.containsKey(key) ? mapValues.get(key) + 1 : 1);
+                mapValues.put(key, 1);
         }
 
         return mapValues;
+    }
+
+    private boolean isExists(Integer key) {
+        return mapValues.containsKey(key);
     }
 
     private boolean isPrime(Integer key) {
